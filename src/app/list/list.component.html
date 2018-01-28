@@ -1,0 +1,30 @@
+<div>
+  <div class="row">
+    <div class="col-xs-6 col-md-4">
+  <div class="input-group">  <input  
+    placeholder="Write down the To List..."  class="form-control"
+    autofocus="" 
+    [(ngModel)]="newItem" >
+    <div class="input-group-btn">
+    <button class="btn btn-primary" type="submit" (click) = "addTodo()" >Add Items        <span class="glyphicon glyphicon-ok"></span>
+    </button>
+  </div>
+      </div>
+      </div>
+      </div>
+<h2> To list manager </h2>   
+<button (click)="removeAll()" class="btn btn-primary">Remove All</button>
+<button (click)="deleteItemSelected()" class="btn btn-primary">Remove Selected</button>
+<ul class="list-group">
+  <li *ngFor="let todo of getDos()" class="list-group-item" >
+      <div class="row">
+          <div class="col-xs-6 col-md-4">
+    <span>{{todo.title}}</span>
+    </div><div class="col-xs-6 col-md-4">
+    <input #{{todo.count}} type="checkbox" value="{{todo.id}}" (change)="selectedItems(todo)"></div>
+      </div>
+   <!-- <button (click)="removeFromList(todo)">Remove Button</button> -->
+  </li> 
+</ul>
+
+</div>
